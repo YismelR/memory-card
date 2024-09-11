@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +9,25 @@
 }
 body {
     padding: 1rem 4rem;
+    background-color: #fffffb;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: "Nerko One";
+}
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-gradient {
+    background-size: 200% 200%;
+    animation: gradientBackground 4s ease infinite;
 }
 
 @layer base {
