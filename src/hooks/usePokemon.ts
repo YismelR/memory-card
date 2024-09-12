@@ -6,7 +6,7 @@ type Poke = {
     name: string;
 };
 
-type PokeData = {
+export type PokeData = {
     name: string;
     src: string;
 };
@@ -47,7 +47,7 @@ const usePokemon = () => {
         getPoke();
     }, []);
 
-    return { pokemons };
+    return { pokemons, setPokemons };
 };
 
 export default usePokemon;
