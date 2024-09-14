@@ -1,11 +1,12 @@
 import usePokemon from "@/hooks/usePokemon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { shuffleCards } from "@/util/shuffleCards";
 
 type PokeCardProps = {
   setScore: React.Dispatch<React.SetStateAction<number>>;
 };
+
 export default function PokeCard({ setScore }: PokeCardProps) {
   const { pokemons, setPokemons } = usePokemon();
   const [clickedPokemons, setClickedPokemons] = useState<string[]>([]);
@@ -21,10 +22,6 @@ export default function PokeCard({ setScore }: PokeCardProps) {
     setPokemons(shuffleCards(pokemons));
   };
 
-  useEffect(() => {
-    setPokemons(shuffleCards(pokemons));
-  }, []);
-
   return (
     <section className="grid gap-4 min-[520px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-6">
       {pokemons.map((pokemon) => (
@@ -35,7 +32,7 @@ export default function PokeCard({ setScore }: PokeCardProps) {
         >
           <Card className="shadow-2xl">
             <CardContent>
-              <img src={pokemon.src} />
+              <img src={pokemon.src} alt={pokemon.name} />
             </CardContent>
             <CardHeader>
               <CardTitle className=" text-xl md:text-2xl">
