@@ -1,16 +1,8 @@
 import { shuffleCards } from "@/util/shuffleCards";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-type Poke = {
-  url: string;
-  name: string;
-};
-
-export type PokeData = {
-  name: string;
-  src: string;
-};
+import { Poke } from "@/Poke";
+import { PokeData } from "@/PokeData";
 
 const usePokemon = () => {
   const [pokemons, setPokemons] = useState<PokeData[]>([]);
