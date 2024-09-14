@@ -1,15 +1,23 @@
-import { useState } from "react";
+// import { useState } from "react";
+
+import { useEffect } from "react";
 
 type ScoresProps = {
   score: number;
+  highestScore: number;
+  setHighestScore: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function Scores({ score }: ScoresProps) {
-  const [highestScore, setHighestScore] = useState(0);
-
-  if (highestScore < score) {
-    setHighestScore(score);
-  }
+export default function Scores({
+  score,
+  highestScore,
+  setHighestScore,
+}: ScoresProps) {
+  useEffect(() => {
+    if (highestScore < score) {
+      setHighestScore(score);
+    }
+  }, [score, highestScore, setHighestScore]);
 
   return (
     <div className="font-semibold text-2xl">
