@@ -1,7 +1,7 @@
 import usePokemon from "@/hooks/usePokemon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PokeData } from "@/hooks/usePokemon";
 import { useEffect, useState } from "react";
+import { shuffleCards } from "@/util/shuffleCards";
 
 type PokeCardProps = {
   setScore: React.Dispatch<React.SetStateAction<number>>;
@@ -9,16 +9,6 @@ type PokeCardProps = {
 export default function PokeCard({ setScore }: PokeCardProps) {
   const { pokemons, setPokemons } = usePokemon();
   const [clickedPokemons, setClickedPokemons] = useState<string[]>([]);
-
-  const shuffleCards = (pokemons: PokeData[]) => {
-    const cardsCopy = [...pokemons];
-
-    for (let i = cardsCopy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [cardsCopy[i], cardsCopy[j]] = [cardsCopy[j], cardsCopy[i]];
-    }
-    return cardsCopy;
-  };
 
   const handleClick = (name: string) => {
     if (clickedPokemons.includes(name)) {
