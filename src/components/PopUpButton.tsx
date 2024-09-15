@@ -32,8 +32,8 @@ export default function PopUpButton({
         </Button>
       </HoverCardTrigger>
       <HoverCardContent className="bg-red-400">
-        This action will reset both score and highest score, would you like to
-        continue?
+        This action will reset both score and highest score. Select Yes to start
+        again!
       </HoverCardContent>
     </HoverCard>
   );

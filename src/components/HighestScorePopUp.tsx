@@ -7,6 +7,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import PopUpButton from "./PopUpButton";
+import ReactConfetti from "react-confetti";
+import { useEffect, useState } from "react";
 
 type HighestScorePopUpProps = {
   highestScore: number;
@@ -20,11 +22,36 @@ export default function HighestScorePopUp({
   setHighestScore,
   setClickedPokemons,
 }: HighestScorePopUpProps) {
-  const isHighest = highestScore === 20;
+  const [windowDimension, setWindowDimension] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const detectSize = () => {
+      setWindowDimension({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", detectSize);
+    return () => {
+      window.removeEventListener("resize", detectSize);
+    };
+  }, [windowDimension]);
+  const isHighest = highestScore === 2;
 
   return (
     <Dialog open={isHighest}>
       <DialogTrigger></DialogTrigger>
+      {isHighest && (
+        <ReactConfetti
+          tweenDuration={8000}
+          height={windowDimension.height}
+          width={windowDimension.width}
+          recycle={false}
+        />
+      )}
       <DialogContent>
         <DialogHeader className="gap-4">
           <DialogTitle className="text-4xl place-self-center bg-gradient-to-r from-indigo-500 from-10% via-yellow-300 via-30% to-sky-500 to-50% text-transparent bg-clip-text animated-gradient">
