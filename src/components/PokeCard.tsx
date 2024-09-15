@@ -39,7 +39,7 @@ export default function PokeCard({
               <img src={pokemon.src} alt={pokemon.name} />
             </CardContent>
             <CardHeader>
-              <CardTitle className=" text-xl md:text-2xl">
+              <CardTitle className=" text-xl md:text-2xl capitalize">
                 {pokemon.name}
               </CardTitle>
             </CardHeader>
