@@ -39,7 +39,7 @@ export default function HighestScorePopUp({
       window.removeEventListener("resize", detectSize);
     };
   }, [windowDimension]);
-  const isHighest = highestScore === 2;
+  const isHighest = highestScore === 20;
 
   return (
     <Dialog open={isHighest}>

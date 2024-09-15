@@ -4,9 +4,11 @@
 @tailwind utilities;
 
 #root {
+  display: flex;
   width: 100%;
   min-height: 100vh;
   height: 100%;
+  justify-content: center;
 }
 
 body {
@@ -16,6 +18,7 @@ body {
   font-family: "Nerko One";
   height: 100%;
 }
+
 @keyframes gradientBackground {
   0% {
     background-position: 0% 50%;

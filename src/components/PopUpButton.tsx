@@ -24,6 +24,8 @@ export default function PopUpButton({
   return (
     <HoverCard>
       <HoverCardTrigger className="flex justify-center">
+        {/* whenever the yes button is clicked I get this error on the console.
+        "Unable to preventDefault inside passive event listener invocation." */}
         <Button
           className="bg-blue-900 hover:bg-yellow-600 text-2xl max-w-20"
           onClick={handleClick}

@@ -22,7 +22,7 @@ export default function Scores({
   return (
     <div className="font-semibold text-2xl">
       <p>Score: {score}</p>
-      <p>Best Score: {highestScore}</p>
+      <p>Best Score: {highestScore} / 20</p>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function PokeMemoryCard() {
   const [highestScore, setHighestScore] = useState(0);
 
   return (
-    <>
+    <div className="max-w-7xl">
       <header className="flex flex-col sm:flex-row justify-between place-items-center">
         <ImageLogos />
         <Scores
@@ -29,6 +29,6 @@ export default function PokeMemoryCard() {
         setHighestScore={setHighestScore}
         setClickedPokemons={setClickedPokemons}
       />
-    </>
+    </div>
   );
 }
