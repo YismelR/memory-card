@@ -1,4 +1,4 @@
-import { PokeData } from "@/hooks/usePokemon";
+import { PokeData } from "@/PokeData";
 
 export const shuffleCards = (pokemons: PokeData[]) => {
   const cardsCopy = [...pokemons];
